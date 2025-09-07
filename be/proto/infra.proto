@@ -1,0 +1,26 @@
+syntax = "proto3"; //v3構文を使用する宣言
+package hearts.infra.v1; //パッケージ名
+
+message Empty {} //空のリクエスト／レスポンス
+
+// データ構造の定義
+message DbPingResponse {
+  bool ok = 1;
+  string server_version = 2;
+  string now = 3;
+}
+
+message GetSettingRequest {
+  string key = 1;
+}
+message GetSettingResponse {
+  string key = 1;
+  string value = 2;
+}
+
+service InfraService {
+  // 空のリクエスト、DB接続結果のレスポンス
+  rpc DbPing(Empty) returns (DbPingResponse);
+  // キー名を指定して、DBの値を返す
+  rpc GetSetting(GetSettingRequest) returns (GetSettingResponse);
+}

@@ -1,0 +1,25 @@
+# OS / Editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Dependencies
+**/node_modules/
+
+# Build outputs
+**/dist/
+
+# Logs & coverage
+**/*.log
+**/npm-debug.log*
+**/yarn-error.log*
+coverage/
+
+# Env
+.env
+.env.*.local
+!.env.example
+
+# Tooling caches (必要なら)
+.turbo/
